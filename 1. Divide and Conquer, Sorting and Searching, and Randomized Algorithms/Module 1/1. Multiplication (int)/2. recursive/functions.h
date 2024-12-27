@@ -11,6 +11,8 @@
 
 int calculateNumberOfDigits(int number);
 int getDigit(int number, int pos);
+int max(int a, int b);
+int pow(int base, int exp);
 
 #endif /* FUNCTIONS_H */
 

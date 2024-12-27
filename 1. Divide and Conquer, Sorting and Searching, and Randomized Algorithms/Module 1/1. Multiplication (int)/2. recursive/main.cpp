@@ -13,24 +13,26 @@ using namespace std;
 
 int recursiveMultiplication(int x, int y){
     
+    if(x<10 and y<10) return x*y;
+    
     int nX=calculateNumberOfDigits(x);
     int nY=calculateNumberOfDigits(y);
+    int nMax=max(nX, nY);
     
-    //1169
-    int a=0, b=0;
-    for(int i=0; i<nX; i++){
-        int digit=getDigit(x, i);
-        if(i<(nX/2)) b+=((10*(i+1)/10)*digit);
-        else a+=((10*(i+1)/10)*digit);
-    }
+    int half=nMax/2;
+    int power=pow(10, half);
     
-    int c, d;
+    int a=x/power;
+    int b=x%power;
+    int c=y/power;
+    int d=y%power;
     
+    int ac=recursiveMultiplication(a, c);
+    int bd=recursiveMultiplication(b, d);
+    int ad=recursiveMultiplication(a, d);
+    int bc=recursiveMultiplication(b, c);
     
-    
-    
-    
-    return 0;
+    return pow(10, nMax)*ac + pow(10, half)*(ad+bc) + bd;
     
 }
 

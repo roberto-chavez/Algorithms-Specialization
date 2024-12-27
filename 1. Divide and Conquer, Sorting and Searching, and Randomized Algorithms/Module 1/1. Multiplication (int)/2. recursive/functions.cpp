@@ -30,3 +30,21 @@ int getDigit(int number, int pos){
     return (number/timesTen)%10;
 	
 }
+
+int max(int a, int b){
+    return (a>b?a:b);
+}
+
+int pow(int base, int exp){
+    
+    if(exp==0) return 1;
+    
+    int result=1;
+    for(int i=1; i<=exp; i++){
+        result*=base;
+    }
+    return result;
+    
+}
+
+

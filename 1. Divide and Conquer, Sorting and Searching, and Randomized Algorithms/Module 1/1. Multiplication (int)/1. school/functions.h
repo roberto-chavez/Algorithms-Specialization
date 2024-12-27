@@ -3,7 +3,7 @@
  * File:   functions.h
  * Author: rober
  *
- * Created on 26 de diciembre de 2024, 11:05 AM
+ * Created on 27 de diciembre de 2024, 01:02 PM
  */
 
 #ifndef FUNCTIONS_H
@@ -11,8 +11,6 @@
 
 int calculateNumberOfDigits(int number);
 int getDigit(int number, int pos);
-int max(int a, int b);
-int pow(int base, int exp);
 
 #endif /* FUNCTIONS_H */
 

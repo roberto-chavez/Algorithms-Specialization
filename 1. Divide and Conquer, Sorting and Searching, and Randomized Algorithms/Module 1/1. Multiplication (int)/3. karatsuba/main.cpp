@@ -3,7 +3,7 @@
  * File:   main.cpp
  * Author: rober
  *
- * Created on 26 de diciembre de 2024, 10:54 AM
+ * Created on 28 de diciembre de 2024, 11:34 AM
  */
 
 #include <iostream>
@@ -11,7 +11,7 @@ using namespace std;
 
 #include "functions.h"
 
-int recursiveMultiplication(int x, int y){
+int karatsubaMultiplication(int x, int y){
     
     if(x<10 and y<10) return x*y;
     
@@ -27,12 +27,12 @@ int recursiveMultiplication(int x, int y){
     int c=y/power;
     int d=y%power;
     
-    int ac=recursiveMultiplication(a, c);
-    int bd=recursiveMultiplication(b, d);
-    int ad=recursiveMultiplication(a, d);
-    int bc=recursiveMultiplication(b, c);
+    int ac=karatsubaMultiplication(a, c);
+    int bd=karatsubaMultiplication(b, d);
+    int ad_plus_bc_partial=karatsubaMultiplication(a+b, c+d);
+    int ad_plus_bc_final=ad_plus_bc_partial-ac-bd;
     
-    return pow(10, nMax)*ac + pow(10, half)*(ad+bc) + bd;
+    return pow(10, nMax)*ac + pow(10, half)*(ad_plus_bc_final) + bd;
     
 }
 
@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
     int x=5678;
     int y=1234;
     
-    cout<<recursiveMultiplication(x, y)<<endl;
+    cout<<karatsubaMultiplication(x, y)<<endl;
     
     return 0;
 
